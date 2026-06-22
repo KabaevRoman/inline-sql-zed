@@ -1,0 +1,44 @@
+id = "inline-sql"
+name = "Inline SQL"
+version = "0.1.1"
+schema_version = 1
+description = "Highlights and formats SQL embedded in strings in common programming languages."
+repository = "https://github.com/KabaevRoman/inline-sql-zed"
+authors = ["Roman Kabaev"]
+themes = []
+icon_themes = []
+languages = []
+capabilities = []
+
+[lib]
+kind = "Rust"
+version = "0.7.0"
+
+[language_servers.inline-sql]
+name = "Inline SQL"
+languages = [
+  "C",
+  "C++",
+  "C#",
+  "Elixir",
+  "Go",
+  "Java",
+  "JavaScript",
+  "Kotlin",
+  "PHP",
+  "Python",
+  "Ruby",
+  "Rust",
+  "Scala",
+  "Swift",
+  "TSX",
+  "TypeScript",
+]
+
+[language_servers.inline-sql.language_ids]
+"C++" = "cpp"
+"C#" = "csharp"
+"Go" = "go"
+"JavaScript" = "javascript"
+"TSX" = "typescriptreact"
+"TypeScript" = "typescript"

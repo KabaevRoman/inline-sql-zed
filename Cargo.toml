@@ -1,0 +1,21 @@
+[package]
+name = "inline-sql-zed"
+version = "0.1.1"
+edition = "2021"
+publish = false
+authors = ["Roman Kabaev"]
+license = "MIT"
+repository = "https://github.com/KabaevRoman/inline-sql-zed"
+homepage = "https://github.com/KabaevRoman/inline-sql-zed"
+readme = "README.md"
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+zed_extension_api = "0.7.0"
+
+[profile.release]
+lto = true
+strip = true

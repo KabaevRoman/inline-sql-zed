@@ -1,0 +1,19 @@
+[sqruff]
+dialect = postgres
+templater = placeholder
+max_line_length = 120
+
+[sqruff:templater:placeholder]
+param_style = colon
+
+[sqruff:indentation]
+indent_unit = space
+tab_space_size = 4
+allow_implicit_indents = False
+
+[sqruff:layout:type:comma]
+spacing_before = touch
+line_position = trailing
+
+[sqruff:rules:capitalisation.keywords]
+capitalisation_policy = upper

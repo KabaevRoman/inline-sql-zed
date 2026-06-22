@@ -1,0 +1,7 @@
+/target/
+/server/target/
+/extension.wasm
+/dist/
+.DS_Store
+.idea/
+.zed

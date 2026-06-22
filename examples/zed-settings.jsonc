@@ -1,0 +1,33 @@
+{
+  "languages": {
+    "Go": {
+      "language_servers": ["gopls", "inline-sql", "..."],
+      "semantic_tokens": "combined",
+      "formatter": [
+        { "language_server": { "name": "gopls" } },
+        { "language_server": { "name": "inline-sql" } },
+      ],
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "inline-sql": {
+      "settings": {
+        "patterns": {
+          "go": [
+            "(?is)\\b(?:const|var)\\s+\\w+\\s*=\\s*`(?P<sql>\\s*(?:SELECT|INSERT|UPDATE|DELETE|WITH|MERGE|CREATE|ALTER|DROP|TRUNCATE)\\b.*?)`",
+          ],
+        },
+        "dialect": "postgres",
+        "formatter": "sqruff",
+        "format_indent": "\t",
+        "formatters": {
+          "sqruff": {
+            "command": "sqruff",
+            "args": ["fix", "--format", "json", "--config", "/absolute/path/to/inline-sql-zed/examples/.sqruff", "--dialect", "{dialect}", "-"],
+          },
+        },
+      },
+    },
+  },
+}
